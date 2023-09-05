@@ -1,0 +1,78 @@
+<div class="mini-header-background">
+    <div class="mini-header">
+        <h3 style="font-size: 40px;"><b>VILLE ED APPARTAMENTI</b></h3>
+        <h4 style="font-size: 20px;"><b>Per vacanze in Sardegna</b></h4>
+    </div>
+</div>
+
+
+<div class="filter-container container">
+  <div class="filter-column">
+    <div class="filter-box">
+      <div class="filter-box-title">
+        <div class="dropdown">
+          <input id="dotazioni-dropdown" type="checkbox" class="dropdown-toggle" />
+          <label for="dotazioni-dropdown" class="dropdown-label center-text">Filtra per Dotazioni</label>
+          <div class="dropdown-content">
+            <div class="amenities-grid">
+              <div class="amenity" *ngFor="let selectableAmenity of selectableAmenities">
+                <label>
+                  <input type="checkbox" name="checkbox" [checked]="selectableAmenity.selected" (change)="onChange(null, selectableAmenity.code, null)">
+                  {{selectableAmenity.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-column">
+    <div class="filter-box">
+      <div class="filter-box-title">
+        <div class="dropdown">
+          <input id="location-dropdown" type="checkbox" class="dropdown-toggle" />
+          <label for="location-dropdown" class="dropdown-label center-text">Filtra per Località/Città</label>
+          <div class="dropdown-content">
+            <div class="localities-grid">
+              <div class="locality" *ngFor="let selectableCity of selectableCities">
+                <label>
+                  <input type="checkbox" name="checkbox" [checked]="selectableCity.selected" (change)="onChange(selectableCity.name, null, null)">
+                  {{selectableCity.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="filter-column">
+    <div class="filter-box">
+      <div class="filter-box-title dropdown-labelz">
+        <label class="center-text" style="margin-right: 10px;"><input id="guestsInput" type="number" min="2" max="15" (input)="onChange(null,null, guests)" />Ospiti Massimi</label>
+      </div>
+    </div>
+  </div>
+  <div class="filter-column">
+    <div class="filter-box">
+      <div class="filter-box-title dropdown-labelz">
+        <label class="center-text" style="margin-right: 10px;"><input id="nameInput" type="text" (input)="onNameChange($event)" />Cerca per Nome</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p class="total-accommodations">{{allAccommodations?.length}} case vacanza disponibili!</p>
+  
+  
+
+
+  
+   
+
+<app-housecards #child [accommodations]="allAccommodations"></app-housecards>
+<div style="display: flex; justify-content: center;">
+    <button class="btn" style="text-align: center;" (click)="loadMoreCards()">Carica più schede</button>
+</div>

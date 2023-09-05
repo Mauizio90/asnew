@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'remixicon/fonts/remixicon.css';
+
+
+:root{
+    --primary: #2A3F80;
+    --secondary: #E9483F;
+    --light: white;
+    --dark: #2A3F80;font-family: 'Roboto', sans-serif;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn{
+    padding: 8px 22px;
+    background: var(--secondary);
+    color: var(--light);
+    border-radius: 5rem;
+}
+
+.btn:hover{
+    background: var(--primary);
+    color: var(--light);
+}
+
+
+.home-text{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.home-text h1{
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+.about{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+    gap: 2rem;
+}
+.about-img img{
+    height: 365px;
+    border-radius: 3rem 0 3rem 3rem;
+    max-width: 600px;
+
+}
+
+.about-text span{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--secondary);
+}
+.about-text h2{
+    
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.about-text p{
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 1rem 0 1rem;
+}
+
+.mini-header{
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.mini-header-background{
+    background: url(src\assets\images\5533882.jpg);
+    background-size: cover;
+    background-position: center;
+}
